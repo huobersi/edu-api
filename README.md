@@ -1,6 +1,35 @@
-# http-api
+# 📌 Inbetriebnahme & Nutzung der HTTP-API 
+## 🔧 Anfragen - Internet - Online (ohne Installation)
+**Web-Interface aufrufen - http und https möglich!!**
+   - **🔗 http://edu-api.huoberiot.com:80** (API-Nutzung)
+   - **🔗 https://edu-api.huoberiot.com:443** (API-Nutzung)
+   - **🔗 https://edu-api.huoberiot.com/ui** (Dashboard)
+   - **🔗 https://edu-api.huoberiot.com/admin** (Admin-Seite, Login erforderlich)
 
-## 🌐 URL & Zugriff auf die API
+**📌 Hinweis: Für Debugging mit Wireshark sollte HTTP verwendet werden.**
+
+## 🔧 Installation & Einrichtung - Offline - (lokaler Node-RED Betrieb via .bat)
+### 1. Node-RED API-Vorlage vorbereiten
+1. **ZIP-Datei entpacken**
+   - 📁 **`250215_API_HTTP-Node-RED_LuL_Master.zip`** entpacken.
+2. **Ordner verschieben**
+   - Verschiebe **`250215_API_HTTP-Node-RED_LuL_Master`** nach **`C:\`**.
+3. **Node-RED starten**
+   - **`node-red.bat`** ausführen.
+4. **Web-Interface aufrufen - http und https möglich!!**
+   - **🔗 http://<ip/url-adresse>:80** (API-Nutzung)
+   - **🔗 https://<ip/url-adresse>/ui** (Dashboard)
+   - **🔗 https://<ip/url-adresse>/admin** (Admin-Seite, Login erforderlich)
+
+## 📂 Bereitgestellte Dateien
+| Datei | Beschreibung |
+|----------------|--------------------------------|
+| `250215_API_HTTP-Node-RED_LuL_Master.zip` | Komplettes ZIP-Archiv mit API-Vorlagen |
+| `250215_API_HTTP_Node-RED_Vorlage_flows.json` | Node-RED Flow-Vorlage für die API |
+| `api` | c:\250215_API_HTTP-Node-RED_LuL_Master\node-v20.15.1\api\ |
+| `iot-node-red-settings.js` | Einstellungen Port / Dateipfade |
+
+# 🌐 URL & Zugriff auf die API
 ```
 http://<ip-adresse>:<port>/api/<endpunkt>
 ```
@@ -12,14 +41,16 @@ http://<ip-adresse>:<port>/api/<endpunkt>
 ### 🔹 Beispiele für den Zugriff:
 - **API-Status abrufen:**
   ```
-  http://10.30.18.250/api/state
+  http://<ip/url-adresse>/api/state
+  https://<ip/url-adresse>/api/state
   ```
-- **Basic-Auth für `/api/datastore` erforderlich** (Postman, Browser oder cURL nutzbar):
+- **Basic-Auth für `/api/endpoint` erforderlich** (Postman, Browser oder cURL nutzbar):
   ```bash
-  curl -u <username>:<passwort> http://10.30.18.250/api/datastore
+  curl -u <username>:<passwort> http://<ip/url-adresse>/api/endpoint
   ```
 
----
+![Postman - Zugriff](:/9daf3dec55684762947d7b8ba37b1e6a)
+
 ## 🚀 Unterstützte Methoden
 ```bash
 GET, POST, PUT, PATCH, DELETE
@@ -86,6 +117,23 @@ HEAD => nicht implementiert
 }
 ```
 
+### 🔐 API-KEY Auth geschützter JSON-Datenspeicher - Request
+| **Methode**  | **Endpoint**       | **Beschreibung**              | **API-Key** | **Header** |
+|-------------|------------------|------------------------------|-------------|-------------|
+| **GET**     | `/api/example`  | Datenspeicher abrufen        | erforderlich | erforderlich |
+| **POST**    | `/api/example`  | Datenspeicher hinzufügen     | erforderlich | erforderlich |
+| **PUT**     | `/api/example`  | Datenspeicher überschreiben  | erforderlich | erforderlich |
+| **PATCH**   | `/api/example`  | Datenspeicher aktualisieren  | erforderlich | erforderlich |
+| **DELETE**  | `/api/example`  | Datenspeicher löschen        | erforderlich | erforderlich |
+
+📌 **Body (JSON-Format):**
+```json
+{
+    "example": "example"
+}
+```
+
 📌 **Basic Authentication in Postman:**
 1. **Authorization > Auth Type > Basic Auth**
 2. **Benutzername & Passwort eingeben**
+
