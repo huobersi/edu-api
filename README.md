@@ -82,7 +82,16 @@ HEAD => nicht implementiert
 |-------------|----------------------------|------------------|
 | **GET**     | `/api/userdata/`           | Alle Benutzerdaten abrufen |
 | **GET**     | `/api/userdata/at_userX/`  | Daten für spezifischen Nutzer abrufen |
+---
+### 🟢 /ui - Platznummer - Request - Post
+| **Methode**  | **Endpoint**                | **Body - RAW** |
+|-------------|----------------------------|------------------|
+| **POST**     | `/api/platz/<zahl><buchstabe>` | True oder False |
 
+📌 **Body (RAW-Format):**
+```raw
+True 
+```
 ---
 ### 📂 Ungeschützter JSON-Datenspeicher - Request
 | **Methode**  | **Endpoint**      | **Beschreibung** |
