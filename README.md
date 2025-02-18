@@ -1,5 +1,4 @@
-## 🔧Query-String – URL-Parameter ![image](https://github.com/user-attachments/assets/10e048d8-4087-4438-affe-b19d4b20d75e)
-
+## 🔧Query-String – URL-Parameter
 | **Methode** | **Endpoint** | **Parameter** | **Beschreibung** |
 |------------|-------------|--------------|------------------|
 | **GET** | `http://edu-api.huoberiot.com/api/users.json` | Keine oder `?at_enableX=on` | Ruft alle Benutzer oder nur aktivierte Benutzer ab. |
