@@ -1,3 +1,13 @@
+## 🔧Query-String – URL-Parameter ![image](https://github.com/user-attachments/assets/10e048d8-4087-4438-affe-b19d4b20d75e)
+
+| **Methode** | **Endpoint** | **Parameter** | **Beschreibung** |
+|------------|-------------|--------------|------------------|
+| **GET** | `http://edu-api.huoberiot.com/api/users.json` | Keine oder `?at_enableX=on` | Ruft alle Benutzer oder nur aktivierte Benutzer ab. |
+| **POST** | `http://edu-api.huoberiot.com/api/users.json` | JSON-Daten | Erstellt einen neuen Benutzer. |
+| **PUT** | `http://edu-api.huoberiot.com/api/users.json` | JSON-Daten | Aktualisiert einen vorhandenen Benutzer. |
+| **DELETE** | `http://edu-api.huoberiot.com/api/users.json` | `?at_usernameX=admin` | Löscht einen Benutzer mit einem bestimmten Benutzernamen. |
+
+
 # 📌 Inbetriebnahme & Nutzung der HTTP-API 
 ## 🔧 Anfragen - Internet - Online (ohne Installation)
 **Web-Interface aufrufen - http und https möglich!!**
